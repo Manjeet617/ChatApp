@@ -71,9 +71,10 @@
   <!-- 🔊 Notification Sound -->
   <audio id="notificationSound" src="https://notificationsounds.com/storage/sounds/file-sounds-1156-pristine.mp3" preload="auto"></audio>
 
-  <script src="/socket.io/socket.io.js"></script>
+  <!-- ✅ Using CDN version of Socket.IO client -->
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
   <script>
-    const socket = io();
+    const socket = io('https://chatapp-1-qbkp.onrender.com');
 
     let username = prompt("Enter your name:") || "Anonymous";
     socket.emit("join", username);
